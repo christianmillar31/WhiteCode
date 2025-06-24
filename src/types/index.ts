@@ -56,9 +56,12 @@ export interface ButtonProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
+  icon?: React.ReactNode;
+  iconSpacing?: number;
 }
 
 export interface InputProps {
+  name: string;
   label?: string;
   placeholder?: string;
   value?: string;
@@ -73,9 +76,10 @@ export interface InputProps {
 export interface CardProps {
   children: React.ReactNode;
   title?: string;
-  subtitle?: string;
+  description?: string;
   className?: string;
-  onClick?: () => void;
+  header?: React.ReactNode;
+  footer?: React.ReactNode;
 }
 
 // Form types
@@ -166,7 +170,7 @@ export interface ApiError {
 
 // Utility types
 export type Optional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
-export type Required<T, K extends keyof T> = T & Required<Pick<T, K>>;
+export type MakeRequired<T, K extends keyof T> = T & Required<Pick<T, K>>;
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 }; 
