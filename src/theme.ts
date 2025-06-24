@@ -1,33 +1,49 @@
 import { createSystem, defaultConfig } from '@chakra-ui/react'
-import { tokens } from './design-tokens'
+import { colors, typography, radii } from './design-tokens'
 
 export const system = createSystem(defaultConfig, {
   theme: {
     tokens: {
       colors: {
-        primary: { value: tokens.colors.primary },
-        accent: { value: tokens.colors.accent },
-        background: { value: tokens.colors.background },
-        text: { value: tokens.colors.text },
+        primary: { value: colors.primary },
+        primaryDark: { value: colors.primaryDark },
+        secondary: { value: colors.secondary },
+        secondaryDark: { value: colors.secondaryDark },
+        background: { value: colors.background },
+        surface: { value: colors.surface },
+        error: { value: colors.error },
+        warning: { value: colors.warning },
+        success: { value: colors.success },
+        text: { value: colors.text },
+        textSecondary: { value: colors.textSecondary },
+        border: { value: colors.border },
       },
       fonts: {
-        heading: { value: tokens.typography.fontFamily },
-        body: { value: tokens.typography.fontFamily },
+        heading: { value: typography.fontFamily },
+        body: { value: typography.fontFamily },
       },
       fontSizes: {
-        '2xl': { value: tokens.typography.h1.size },
-        xl: { value: tokens.typography.h2.size },
-        md: { value: tokens.typography.body.size },
+        xs: { value: typography.fontSize.xs },
+        sm: { value: typography.fontSize.sm },
+        base: { value: typography.fontSize.base },
+        lg: { value: typography.fontSize.lg },
+        xl: { value: typography.fontSize.xl },
+        '2xl': { value: typography.fontSize['2xl'] },
+        '3xl': { value: typography.fontSize['3xl'] },
+        '4xl': { value: typography.fontSize['4xl'] },
+        '5xl': { value: typography.fontSize['5xl'] },
       },
       fontWeights: {
-        heading: { value: tokens.typography.h1.weight },
-        body: { value: tokens.typography.body.weight },
+        normal: { value: typography.fontWeight.normal },
+        medium: { value: typography.fontWeight.medium },
+        semibold: { value: typography.fontWeight.semibold },
+        bold: { value: typography.fontWeight.bold },
       },
       radii: {
-        sm: { value: tokens.radii.sm },
-        md: { value: tokens.radii.md },
-        lg: { value: tokens.radii.lg },
-        full: { value: tokens.radii.full },
+        sm: { value: radii.sm },
+        md: { value: radii.md },
+        lg: { value: radii.lg },
+        full: { value: radii.full },
       },
     },
   },
